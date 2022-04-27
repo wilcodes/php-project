@@ -1,0 +1,65 @@
+
+        *{
+          margin: 0;
+          padding: 0;
+      }
+      form{
+          margin: 0 auto;
+          width: 70%;
+      }
+
+      h1{
+          text-align: center;
+          color: #000;
+      }
+
+      div{
+          margin-top: .8rem;
+      }
+
+      body{
+          background-image: url("./assets/scattered-forcefields\ \(2\).svg");
+          background-size: cover;
+          box-sizing: border-box;
+         
+      }
+      label{
+         
+          color: rgb(8, 122, 88);
+      }
+
+      nav{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row nowrap;
+        background-color: #ccc;
+        box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+      }
+
+      ul{
+           list-style: none;
+      }
+
+      .linksBox {
+           display: flex;
+           justify-content: space-around;
+           flex-direction: row nowrap;
+           margin-right: 1.5rem;
+      }
+      .linksBox a {
+           color: #fff;
+           text-decoration: none;
+      }
+
+
+
+      .linksBox a:hover {
+        color: rgb(45, 41, 41);
+        transition: .5s;
+      }
+
+      .title{
+          margin-top: 1rem;
+          color: rgb(23, 131, 102);
+          font-size: 3rem;
+      }
