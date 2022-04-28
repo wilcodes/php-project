@@ -1,65 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
-        *{
-          margin: 0;
-          padding: 0;
-      }
-      form{
-          margin: 0 auto;
-          width: 70%;
-      }
+body {
+    background-color: #ccc;
+}
 
-      h1{
-          text-align: center;
-          color: #000;
-      }
+form {
+    margin: 0 auto;
+    width: 70%;
+}
 
-      div{
-          margin-top: .8rem;
-      }
+h1 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 2rem;
+}
 
-      body{
-          background-image: url("./assets/scattered-forcefields\ \(2\).svg");
-          background-size: cover;
-          box-sizing: border-box;
-         
-      }
-      label{
-         
-          color: rgb(8, 122, 88);
-      }
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row nowrap;
+    background-color: rgb(20, 26, 58);
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
+    height: 80px;
+}
 
-      nav{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row nowrap;
-        background-color: #ccc;
-        box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
-      }
+ul {
+    list-style: none;
+}
 
-      ul{
-           list-style: none;
-      }
+.linksBox {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row nowrap;
+    margin-right: 1.5rem;
+}
 
-      .linksBox {
-           display: flex;
-           justify-content: space-around;
-           flex-direction: row nowrap;
-           margin-right: 1.5rem;
-      }
-      .linksBox a {
-           color: #fff;
-           text-decoration: none;
-      }
+main {
+    border: 1px solid rgb(255, 255, 255);
+    width: 80%;
+    margin: 3rem auto;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
+    padding: 1rem;
+    background-color: #fff;
+
+}
+
+.linksBox a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 80px;
+    font-size: 1.4rem;
+}
 
 
 
-      .linksBox a:hover {
-        color: rgb(45, 41, 41);
-        transition: .5s;
-      }
+.linksBox a:hover {
+    color: rgb(217, 188, 42);
+    transition: .5s;
+}
 
-      .title{
-          margin-top: 1rem;
-          color: rgb(23, 131, 102);
-          font-size: 3rem;
-      }
+.title {
+    margin-top: 1rem;
+    color: rgb(23, 131, 102);
+    font-size: 3rem;
+}
+
+img {
+    width: auto;
+    height: 80px;
+}
+
+/* ----------------------------------------------- */
+/*---------Footer------------*/
+/* ----------------------------------------------- */
+
+
+footer {
+    background-color: rgb(20, 26, 58);
+    color: #ffffff;
+    height: 250px;
+}
+
+.iconsWrapper {
+    text-align: center;
+
+}
+
+.icons {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+footer p {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: .4rem;
+
+}
+
+.mainLogo {
+    width: 150px;
+    height: auto;
+}
+
+.mainLogoWrapper {
+    text-align: center;
+
+}
