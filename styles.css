@@ -27,6 +27,8 @@ nav {
     height: 80px;
 }
 
+
+
 ul {
     list-style: none;
 }
@@ -69,9 +71,9 @@ main {
 }
 
 img {
-    width: auto;
-    height: 80px;
+    height: 1000px;
 }
+
 
 /* ----------------------------------------------- */
 /*---------Footer------------*/

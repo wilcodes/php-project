@@ -3,7 +3,7 @@ session_start();
 ?>
 <?php require "./getData.php"; ?>
 <?php require "./renderItems.php"; ?>
-
+<?php require "./sendData.php"; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -30,7 +30,7 @@ session_start();
 
           <div class="linksBox">
                <ul>
-                    <li><a href=""> Catalog </a> </li>
+                    <li><a href="./index.php"> Catalog </a> </li>
                </ul>
                <ul>
                     <li><a href="./checkout.php"> Checkout </a> </li>
@@ -46,32 +46,14 @@ session_start();
           <h1>Select your Item</h1>
           <?php
 
-    // assigning file to variable
-    $catalogFile = "./catalog.dat";
+          foreach ($_SESSION as $value => $key) {
+               echo $value;
+
+               echo $key;
+          };
 
 
-    //Calling get data function to separate and organize our data from catalog.dat
-    $items = getData($catalogFile);
-
-
-    // Passing the array into a function that returns our items
-    renderItems($items);
-
-    if ($_POST['add']) {
-      $arrayTest = $_POST;
-      echo('Test');
-      
-      foreach ($arrayTest as $value => $key) {
-        echo $value;
-        echo $key;
-      };
-    };
-
-
-
-
-
-    ?>
+          ?>
 
      </main>
 
