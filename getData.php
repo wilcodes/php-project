@@ -1,7 +1,4 @@
 <?php
-
-
-
 // Function that gets a file and return associative array with values needed
 
 function getData ($file){

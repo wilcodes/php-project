@@ -1,5 +1,8 @@
 <?php
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <?php require "./getData.php"; ?>
 <?php require "./renderItems.php"; ?>
@@ -44,41 +47,53 @@ session_start();
      <main>
 
           <h1>Select your Item</h1>
+
+
+
           <?php
 
-    // assigning file to variable
-    $catalogFile = "./catalog.dat";
+          // assigning file to variable
+          $catalogFile = "./catalog.dat";
 
 
-    //Calling get data function to separate and organize our data from catalog.dat
-    $items = getData($catalogFile);
+          //Calling get data function to separate and organize our data from catalog.dat
+          $items = getData($catalogFile);
 
 
-    // Passing the array into a function that returns our items
-    renderItems($items);
+          // Passing the array into a function that returns our items
+          renderItems($items);
 
-    if ($_POST['add']) {
-      $arrayTest = $_POST;
-      echo('Test');
-      
-      foreach ($arrayTest as $value => $key) {
-        echo $value;
-        echo $key;
-      };
-    };
+          if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+               if ($_POST) {
+
+                    $arrayTest = $_POST;
+                    
+                    if (!$_SESSION['cart']) {
+                         $_SESSION['cart'] = array();
+                    }
+                    array_push($_SESSION['cart'], $arrayTest);
+
+                    // foreach ($_SESSION['cart'][3] as $value => $key) {
+                    //      echo (" <span> $value  </span> <br/>");
+                    //      echo ($key . '<br/>');
+                    // };
+
+               } else {
+                    echo ("Error finding POST ADD");
+               }
+          }
+          ?>
 
 
 
-
-
-    ?>
 
      </main>
 
 
      <footer>
 
-          <div class="mainLogoWrapper">
+          <div class=" mainLogoWrapper">
                <a href="./index.html">
                     <img src="./assets/logo.png" class="mainLogo" alt="" />
                </a>

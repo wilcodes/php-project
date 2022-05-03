@@ -1,5 +1,8 @@
 <?php
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <?php require "./getData.php"; ?>
 <?php require "./renderItems.php"; ?>
@@ -45,13 +48,17 @@ session_start();
 
           <h1>Select your Item</h1>
           <?php
-
-          foreach ($_SESSION as $value => $key) {
-               echo $value;
-
-               echo $key;
+          
+          if (isset($_SESSION['cart'])) {
+               foreach ($_SESSION['cart'] as $value => $key) {
+                    
+                    foreach ($key as $v => $k) {
+                         echo (" <span> $k  </span> <br/>");
+                         echo ($v . '<br/>');
+                    }
+                    
+               };
           };
-
 
           ?>
 
