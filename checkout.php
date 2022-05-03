@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 <?php require "./getData.php"; ?>
 <?php require "./renderItems.php"; ?>
 <?php require "./sendData.php"; ?>
+<?php require "./renderItemC.php"; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -47,20 +48,50 @@ error_reporting(E_ALL);
      <main>
 
           <h1>Select your Item</h1>
-          <?php
-          
-          if (isset($_SESSION['cart'])) {
-               foreach ($_SESSION['cart'] as $value => $key) {
-                    
-                    foreach ($key as $v => $k) {
-                         echo (" <span> $k  </span> <br/>");
-                         echo ($v . '<br/>');
-                    }
-                    
-               };
-          };
 
-          ?>
+          <table class="table table-striped">
+               <thead>
+                    <tr>
+
+                         <th scope="col">Item</th>
+                         <th scope="col">Quantity</th>
+                         <th scope="col">Price</th>
+                    </tr>
+               </thead>
+               <tbody>
+
+
+                    <?php
+
+                    if (isset($_SESSION['cart'])) {
+
+                         showItems($_SESSION['cart']);
+                    }
+                    ?>
+                    <!-- <tr>
+                         <th scope="row">1</th>
+                         <td>Mark</td>
+                         <td>Otto</td>
+                         <td>@mdo</td>
+                    </tr>
+                    
+                    <tr>
+                         <th scope="row">2</th>
+                         <td>Jacob</td>
+                         <td>Thornton</td>
+                         <td>@fat</td>
+                    </tr>
+                    <tr>
+                         <th scope="row">3</th>
+                         <td colspan="2">Larry the Bird</td>
+                         <td>@twitter</td>
+                    </tr> -->
+               </tbody>
+
+          </table>
+
+
+
 
      </main>
 
