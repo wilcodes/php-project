@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 ?>
 <?php require "./getData.php"; ?>
 <?php require "./renderItems.php"; ?>
+<?php require "./modalMessage.php" ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -68,11 +69,12 @@ error_reporting(E_ALL);
                if ($_POST) {
 
                     $arrayTest = $_POST;
-                    
+
                     if (!$_SESSION['cart']) {
                          $_SESSION['cart'] = array();
                     }
                     array_push($_SESSION['cart'], $arrayTest);
+                    renderMessage(false);
 
                     // foreach ($_SESSION['cart'][3] as $value => $key) {
                     //      echo (" <span> $value  </span> <br/>");
@@ -80,7 +82,7 @@ error_reporting(E_ALL);
                     // };
 
                } else {
-                    echo ("Error finding POST ADD");
+                    renderMessage(true);
                }
           }
           ?>

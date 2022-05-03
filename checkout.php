@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 <?php require "./renderItems.php"; ?>
 <?php require "./sendData.php"; ?>
 <?php require "./renderItemC.php"; ?>
+<?php require "./showFinalData.php"; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -47,7 +48,7 @@ error_reporting(E_ALL);
 
      <main>
 
-          <h1>Select your Item</h1>
+          <h1>Verify the information and proceed</h1>
 
           <table class="table table-striped">
                <thead>
@@ -56,6 +57,7 @@ error_reporting(E_ALL);
                          <th scope="col">Item</th>
                          <th scope="col">Quantity</th>
                          <th scope="col">Price</th>
+                         <th scope="col">Total</th>
                     </tr>
                </thead>
                <tbody>
@@ -66,32 +68,20 @@ error_reporting(E_ALL);
                     if (isset($_SESSION['cart'])) {
 
                          showItems($_SESSION['cart']);
-                    }
+                    };
                     ?>
-                    <!-- <tr>
-                         <th scope="row">1</th>
-                         <td>Mark</td>
-                         <td>Otto</td>
-                         <td>@mdo</td>
-                    </tr>
-                    
-                    <tr>
-                         <th scope="row">2</th>
-                         <td>Jacob</td>
-                         <td>Thornton</td>
-                         <td>@fat</td>
-                    </tr>
-                    <tr>
-                         <th scope="row">3</th>
-                         <td colspan="2">Larry the Bird</td>
-                         <td>@twitter</td>
-                    </tr> -->
+
+
                </tbody>
-
           </table>
+          <?php
+          if (isset($_SESSION['cart'])) {
 
+               $globalTotal = getTotal($_SESSION['cart']);
 
-
+               totalBox($globalTotal);
+          }
+          ?>
 
      </main>
 
