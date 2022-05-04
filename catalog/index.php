@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
+
 <?php require "./getData.php"; ?>
 <?php require "./renderItems.php"; ?>
 <?php require "./modalMessage.php" ?>
@@ -18,7 +19,7 @@ error_reporting(E_ALL);
 
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-     <link rel="stylesheet" href="./styles.css">
+     <link rel="stylesheet" href="../styles.css">
 
 
 </head>
@@ -28,16 +29,16 @@ error_reporting(E_ALL);
      <nav>
           <div>
                <a href="">
-                    <img src="./assets/logo.png" alt="" class="nav-logo">
+                    <img src="../assets/logo.png" alt="" class="nav-logo">
                </a>
           </div>
 
           <div class="linksBox">
                <ul>
-                    <li><a href=""> Catalog </a> </li>
+                    <li><a href="./index.php"> Catalog </a> </li>
                </ul>
                <ul>
-                    <li><a href="./checkout.php"> Checkout </a> </li>
+                    <li><a href="../checkout/checkout.php"> Checkout </a> </li>
                </ul>
 
           </div>
@@ -54,7 +55,7 @@ error_reporting(E_ALL);
           <?php
 
           // assigning file to variable
-          $catalogFile = "./catalog.dat";
+          $catalogFile = "../catalog.dat";
 
 
           //Calling get data function to separate and organize our data from catalog.dat
@@ -69,10 +70,11 @@ error_reporting(E_ALL);
                if ($_POST) {
 
                     $arrayTest = $_POST;
-
+                    
                     if (!$_SESSION['cart']) {
                          $_SESSION['cart'] = array();
                     }
+                    
                     array_push($_SESSION['cart'], $arrayTest);
                     renderMessage(false);
 
@@ -96,8 +98,8 @@ error_reporting(E_ALL);
      <footer>
 
           <div class=" mainLogoWrapper">
-               <a href="./index.html">
-                    <img src="./assets/logo.png" class="mainLogo" alt="" />
+               <a href="./index.php">
+                    <img src="../assets/logo.png" class="mainLogo" alt="" />
                </a>
           </div>
 

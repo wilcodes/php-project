@@ -3,6 +3,7 @@
 function totalBox($total)
 {
      echo ("
+   
      <div style='margin: 3rem auto; text-align:right; padding: 2.5rem;'>
      <div>
           <h3 style='font-size: 2.5rem;'> Total Price</h3>
@@ -12,9 +13,11 @@ function totalBox($total)
      </div>
 
      <div>
-          <button type='button' class='btn btn-warning'>Checkout</button>
-          <button type='button' class='btn btn-danger'>Clean Cart</button>
+          <input type='hidden' name='state' value='destroy' />   
+          <button type='button' class='btn btn-warning' name='update'>Update</button>
+          <button type='submit' class='btn btn-danger' name='clear' >Clean Cart</button>
      </div>
-</div>
+     </div>
+     
      ");
 };

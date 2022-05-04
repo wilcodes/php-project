@@ -28,7 +28,7 @@ function renderMessage($error)
      <div class='modal-footer'>
          
            <button type='button' class='btn btn-primary' ><a href='./index.php'>  Keep Shopping </a></button>
-           <button type='button' class='btn btn-secondary' ><a href='./checkout.php'>  Checkout</a></button>
+           <button type='button' class='btn btn-secondary' ><a href='../checkout/checkout.php'>  Checkout</a></button>
          </div>
          </div>
      ");

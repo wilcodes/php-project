@@ -157,3 +157,10 @@ a:hover {
     width: 50%;
 }
 
+.footer {
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
