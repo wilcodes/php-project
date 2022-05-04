@@ -3,7 +3,7 @@
 function totalBox($total)
 {
      echo ("
-   
+     <form method='post' action='./checkout.php'>
      <div style='margin: 3rem auto; text-align:right; padding: 2.5rem;'>
      <div>
           <h3 style='font-size: 2.5rem;'> Total Price</h3>
@@ -18,6 +18,6 @@ function totalBox($total)
           <button type='submit' class='btn btn-danger' name='clear' >Clean Cart</button>
      </div>
      </div>
-     
+     </form>
      ");
 };
