@@ -7,14 +7,14 @@ function showItems($items)
 
           foreach ($items as $key => $value) {
 
+               // echo ($key . '</br>');
+               // echo ($value['items']);
                $quantity = 1;
                if ($value['items']) {
                     $quantity = $value['items'];
                };
 
                $name = $value['article'];
-
-
 
                $price = $value['price'];
                // Transforming string into a number
@@ -26,19 +26,21 @@ function showItems($items)
                $total = $float_quantity * $float_price;
                $total = number_format((float)$total, 2, '.', '');
                echo ("
-                    
-                              <tr>
-                              <td>$name</td>
-                              <td>
-                              <input size=4  type=text  name='$name' value='$quantity'>
-                              </td>
-                              <td>$$price</td>
-                              <td>$$total</td>
-                               </tr>
-                    ");
+     
+               <tr>
+               <td>$name</td>
+               <td>
+               <input size=4  type=text  name='$name' value='$quantity'>
+               </td>
+               <td>$$price</td>
+               <td>$$total</td>
+                </tr>
+     ");
           };
      };
 };
+
+
 
 
 function getTotal($items)

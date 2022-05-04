@@ -70,19 +70,35 @@ error_reporting(E_ALL);
                if ($_POST) {
 
                     $arrayTest = $_POST;
-                    
+
+                    // foreach ($arrayTest as $value => $key) {
+                    //      echo (" <span> $value  </span> <br/>");
+                    //      echo ($key . '<br/>');
+                    // };
+
+
                     if (!$_SESSION['cart']) {
                          $_SESSION['cart'] = array();
                     }
-                    
-                    array_push($_SESSION['cart'], $arrayTest);
+                    //Creating a key variable to assign into the associative session array
+                    $key = $arrayTest['id'];
+
+                    //Checking if the session with the given key exists
+                    if (isset($_SESSION[$key])) {
+
+                         //If it exist, add quantities
+                         $_SESSION['cart'][$key]['items'] = $_SESSION['cart'][$key]['items'];
+                    } else {
+                         //If it does not exist, create array
+                         $_SESSION['cart'][$key] = $arrayTest;
+                    };
+
                     renderMessage(false);
 
                     // foreach ($_SESSION['cart'][3] as $value => $key) {
                     //      echo (" <span> $value  </span> <br/>");
                     //      echo ($key . '<br/>');
                     // };
-
                } else {
                     renderMessage(true);
                }
