@@ -18,11 +18,13 @@ function showItems($items)
 
                $price = $value['price'];
                // Transforming string into a number
-               $float_quantity = (float)$quantity;
-               $float_price = (float)$price;
+               // $float_quantity = floatval($quantity);
+               // $float_price = floatval($price);
+               $float_quantity = number_format((float)$quantity, 2, '.', '');
+               $float_price =  number_format((float)$price, 2, '.', '');
                //Multiply the values and assign it to total
                $total = $float_quantity * $float_price;
-
+               $total = number_format((float)$total, 2, '.', '');
                echo ("
                     
                               <tr>
@@ -58,6 +60,7 @@ function getTotal($items)
           //Multiply the values and assign it to total
           $innerTotal = $float_quantity * $float_price;
           $total += $innerTotal;
+          $total = number_format((float)$total, 2, '.', '');
      };
      return $total;
 };
