@@ -20,15 +20,15 @@ function renderMessage($error)
      <div class='modal-content'>
      <div class='modal-header'>
        <h5 class='modal-title' id='exampleModalLabel'>$modalTitle</h5>
-      <a href='./index.html'> <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button> </a>
+      <a href='./index.php'> <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button> </a>
      </div>
      <div class='modal-body'>
        $modalMessage
      </div>
      <div class='modal-footer'>
          
-           <button type='button' class='btn btn-primary' ><a href='./index.php'>  Keep Shopping </a></button>
-           <button type='button' class='btn btn-secondary' ><a href='../checkout/checkout.php'>  Checkout</a></button>
+           <button type='button' class='btn btn-success' ><a href='./index.php'>  Keep Shopping </a></button>
+           <button type='button' class='btn btn-dark' ><a href='../checkout/checkout.php'>  Checkout</a></button>
          </div>
          </div>
      ");

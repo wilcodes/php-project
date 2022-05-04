@@ -29,7 +29,7 @@ function renderItems($items)
           </div>
           <p > <span style='font-weight:bold;'> Price: </span> $$price </p>
 
-          <button type='submit' class='btn btn-primary' name='add-$value'>Add items to cart</input>
+          <button type='submit' class='btn btn-outline-success' name='add-$value'>Add items to cart</input>
      </div>
 </div>
 </form>

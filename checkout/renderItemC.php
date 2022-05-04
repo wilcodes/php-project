@@ -9,6 +9,7 @@ function showItems($items)
 
                // echo ($key . '</br>');
                // echo ($value['items']);
+               
                $quantity = 1;
                if ($value['items']) {
                     $quantity = $value['items'];
@@ -30,7 +31,9 @@ function showItems($items)
                <tr>
                <td>$name</td>
                <td>
-               <input size=4  type=text  name='$name' value='$quantity'>
+               
+               <input size=4  type=text  name='$key' value='$quantity'>
+              
                </td>
                <td>$$price</td>
                <td>$$total</td>

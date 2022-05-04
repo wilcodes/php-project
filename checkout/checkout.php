@@ -5,15 +5,32 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 <?php require "./renderItemC.php"; ?>
-<?php require "./showFinalData.php"; ?>
-
+<?php require "./emptyCart.php";  ?>
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     if ($_POST['state']) {
+
+     if (isset($_POST['clear'])) {
           $_SESSION = array();
           session_destroy();
      }
 };
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+     if (isset($_POST['update'])) {
+
+          foreach ($_POST as $key => $value) {
+
+               foreach ($_SESSION['cart'] as $keyS => $valueS) {
+                    if ($keyS == $key) {
+                         $_SESSION['cart'][$key]['items'] = $value;
+                    }
+               };
+          }
+     }
+};
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -71,30 +88,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                          <?php
 
-                    if (isset($_SESSION['cart'])) {
-
-                         showItems($_SESSION['cart']);
-                    };
-                    ?>
+                         if (isset($_SESSION['cart'])) {
+                              showItems($_SESSION['cart']);
+                         };
+                         ?>
 
 
                     </tbody>
                </table>
 
+
+               <div style='margin: 3rem auto; text-align:right; padding: 2.5rem;'>
+                    <div>
+                         <h3 style='font-size: 2.5rem;'> Total Price</h3>
+                    </div>
+                    <div>
+                         <h3>$
+                              <?php
+                              if (isset($_SESSION['cart'])) {
+
+                                   echo (getTotal($_SESSION['cart']));
+                              } else {
+                                   echo ('0.00');
+                              }
+                              ?>
+                         </h3>
+                    </div>
+
+                    <div>
+
+                         <button type='submit' class='btn btn-warning' name='update'>Update</button>
+                         <button type='submit' class='btn btn-danger' name='clear'>Clean Cart</button>
+                    </div>
+               </div>
+
           </form>
 
           <?php
           if (isset($_SESSION['cart'])) {
-               
-               $globalTotal = getTotal($_SESSION['cart']);
 
-               totalBox($globalTotal);
+               $globalTotal = getTotal($_SESSION['cart']);
+          } else {
+               renderMessage();
           }
 
-          
 
-
-          // destroying session
 
 
           ?>
